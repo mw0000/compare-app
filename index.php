@@ -19,8 +19,8 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="assets/css/normalize.css">
-  <link rel="stylesheet" href="assets/css/skeleton.css">
+  <link rel="stylesheet" href="assets/css/bulma.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,25 +32,64 @@
   crossorigin="anonymous"></script>
 
 </head>
-<body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        
-        <?php
+<body>
+<div class="container">
+  <nav class="level menu">
+    <!-- Left side -->
+    <div class="level-left">
+      <div class="level-item">
+        <p class="subtitle is-5">
+          <strong>123</strong> posts
+        </p>
+      </div>
+     
+    </div>
+
+    <!-- Right side -->
+    <div class="level-right">
+
+       <div class="level-item">
+        <div class="field has-addons">
+          <p class="control">
+            <input class="input" type="text" placeholder="Find a post">
+          </p>
+          <p class="control">
+            <button class="button">
+              Search
+            </button>
+          </p>
+        </div>
+      </div>    
+
+    </div>
+  </nav>
+
+
+
+
+</div>
+
+
+
+
+ <section class="section">
+    <div class="container">
+
+
+<div class="columns">
+  <div class="column is-three-quarters">
+  <h1 class="title">
+        Hello World
+      </h1>
+      <?php
 
           include('app.php');
           $app = new App();
 
           //print_r($app->getAppMenu());
 
-          foreach($app->getAppMenu() as $m) {
-            print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
-          }
+          
 
           $content = $app->getAppContent();
 
@@ -58,26 +97,43 @@
             include('content.php');
           }
         ?>
-        
-        
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
 
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page 2</h4>
-        
-       
-        
-        
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>    
+  </div>
+  <div class="column">
+
+          
+
+  <aside class="menu">
+  <p class="menu-label">
+    Wersje językowe
+  </p>
+  <ul class="menu-list">
+  <?php foreach($app->getAppMenu() as $m) {
+            print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
+          }?>
+  </ul>
+</aside>
+  </div>
+</div>
 
 
+      
+      
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
     </div>
   </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</footer>
+        
 </body>
 </html>
 

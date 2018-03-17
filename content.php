@@ -1,6 +1,6 @@
 <div class="content">
 
-<h1>Tytuł: <?php print $content[2];?></h1>
+<h1>Tytuł: <?php print $content[2];?></h1> 
 
 <div class="entry">
 

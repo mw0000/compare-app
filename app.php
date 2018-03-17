@@ -26,7 +26,7 @@ class App extends AppData {
 
         //$array = array_map("str_getcsv", explode("\n", $csv));
         
-        print_r($this->data);
+        //print_r($this->data);
         
         $keys = $this->data[0];
 
@@ -64,11 +64,7 @@ class App extends AppData {
     
             return $content;
 
-          } else {
-
-            //
-
-          }
+          } 
 
 
     }
