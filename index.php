@@ -49,19 +49,8 @@
     <!-- Right side -->
     <div class="level-right">
 
-       <div class="level-item">
-        <div class="field has-addons">
-          <p class="control">
-            <input class="input" type="text" placeholder="Find a post">
-          </p>
-          <p class="control">
-            <button class="button">
-              Search
-            </button>
-          </p>
-        </div>
-      </div>    
-
+ 
+      <p class="level-item"><a>Drafts</a></p>
     </div>
   </nav>
 
@@ -93,8 +82,25 @@
 
           $content = $app->getAppContent();
 
-          if (!empty($content)) {
+          if (!empty($content) AND empty($_GET['compare'])) {
             include('content.php');
+          } elseif(!empty($_GET['compare'])){?>
+          <div class="columns">
+            <div class="column">
+            
+              <?php  
+              $h = 1;
+              include('content.php');?>
+
+            </div>
+
+            <div class="column">
+            
+              <?php  include('content.php');?>    
+
+            </div>
+          </div>  
+        <?php      
           }
         ?>
 
@@ -103,7 +109,7 @@
 
           
 
-  <aside class="menu">
+  <aside class="menu is-info">
   <p class="menu-label">
     Wersje językowe
   </p>
