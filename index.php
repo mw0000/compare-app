@@ -134,9 +134,6 @@
 
 
 
-  <p class="menu-label">
-    Wersje językowe 
-  </p>
   
 
   
