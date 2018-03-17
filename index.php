@@ -20,6 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="assets/css/bulma.css">
+  <link rel="stylesheet" href="assets/css/bulma-switch.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Favicon
@@ -30,6 +31,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="assets/js/app.js"></script>
 
 </head>
 
@@ -59,18 +61,36 @@
 
 </div>
 
-
-
+ <section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-quarter">
+      </div>
+      <div class="column is-one-quarter">
+      </div>
+      <div class="column is-one-quarter">
+      </div>
+      <div class="column is-one-quarter">
+        <div class="field">
+          <input id="switchRoundedInfo" type="checkbox" name="switchRoundedInfo" class="switch is-rounded is-info" checked="checked">
+          <label for="switchRoundedInfo">Schowaj menu</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
  <section class="section">
     <div class="container">
 
-
-<div class="columns">
-  <div class="column is-three-quarters">
+<div class="columns" id="columns">
+  <div class="column is-three-quarters" id="main">
   <h1 class="title">
         Hello World
       </h1>
+
+      
+
       <?php
 
           include('app.php');
@@ -105,15 +125,22 @@
         ?>
 
   </div>
-  <div class="column">
+  
+  <div class="column" id="menu-column">
 
           
 
   <aside class="menu is-info">
+
+
+
   <p class="menu-label">
-    Wersje językowe
+    Wersje językowe 
   </p>
-  <ul class="menu-list">
+  
+
+  
+  <ul class="menu-list lang-menu">
   <?php foreach($app->getAppMenu() as $m) {
             print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
           }?>
