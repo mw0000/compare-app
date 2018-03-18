@@ -30,6 +30,8 @@ class App extends AppData {
         
         $keys = $this->data[0];
 
+        if (empty($_GET['compare'])) {
+
             $i = 0;
             foreach($this->data as $m) {
                 $menu_a[$i] = $m[1];
@@ -39,7 +41,7 @@ class App extends AppData {
             $menu1_a = array_shift($menu_a);
             
             return $menu_a;
-
+        }    
 
     }
 
@@ -49,7 +51,7 @@ class App extends AppData {
             // Do something.
 
             $l = htmlspecialchars($_GET["lang"]);
-            print $l;
+            //print $l;
             $i = 0;
             //print $this->data[1][1];
             foreach($this->data as $d) {
@@ -68,5 +70,35 @@ class App extends AppData {
 
 
     }
+
+
+    public function getStatusCompare() {
+
+        if (empty($_GET['compare'])) {
+
+            return FALSE;
+
+        } else {
+
+            return TRUE;
+
+        }
+
+    }
+
+    public function getRandomCompare() {
+
+        
+        $content = $this->data;
+        $content_a = array_shift($content);
+        $n = count($this->data);
+        $content = array_rand($content,2); 
+        
+        return $content;
+
+
+
+    }
+
 
 }

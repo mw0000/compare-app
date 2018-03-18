@@ -1,3 +1,11 @@
+<?php
+          include('app.php');
+          $app = new App();
+          //print_r($app->getAppMenu());
+          // content ready
+          $content = $app->getAppContent();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,10 +79,12 @@
       <div class="column is-one-quarter">
       </div>
       <div class="column is-one-quarter">
+      <?php if($app->getStatusCompare() === FALSE) { ?>
         <div class="field">
           <input id="switchRoundedInfo" type="checkbox" name="switchRoundedInfo" class="switch is-rounded is-info" checked="checked">
           <label for="switchRoundedInfo">Schowaj menu</label>
         </div>
+      <?php } ?>    
       </div>
     </div>
   </div>
@@ -83,33 +93,38 @@
  <section class="section">
     <div class="container">
 
-<div class="columns" id="columns">
-  <div class="column is-three-quarters" id="main">
-  <h1 class="title">
-        Hello World
-      </h1>
+
 
       
 
       <?php
 
-          include('app.php');
-          $app = new App();
 
-          //print_r($app->getAppMenu());
+          // views
+          // 1. single
+          if (!empty($content) AND $app->getStatusCompare() === FALSE) { ?>
 
-          
+          <div class="columns" id="columns">
+            <div class="column is-three-quarters" id="main">  
+              <?php  include('content.php'); } ?>
+            </div>
+            <div class="column" id="menu-column">
+              <aside class="menu is-info">
+                <ul class="menu-list lang-menu">
+                  <?php foreach($app->getAppMenu() as $m) {
+                    print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
+                  }?>
+                </ul>
+              </aside>
+            </div>
+          </div>  
 
-          $content = $app->getAppContent();
-
-          if (!empty($content) AND empty($_GET['compare'])) {
-            include('content.php');
-          } elseif(!empty($_GET['compare'])){?>
+            
+          <?php if($app->getStatusCompare() === TRUE) { ?>
           <div class="columns">
             <div class="column">
             
               <?php  
-              $h = 1;
               include('content.php');?>
 
             </div>
@@ -123,32 +138,6 @@
         <?php      
           }
         ?>
-
-  </div>
-  
-  <div class="column" id="menu-column">
-
-          
-
-  <aside class="menu is-info">
-
-
-
-  
-
-  
-  <ul class="menu-list lang-menu">
-  <?php foreach($app->getAppMenu() as $m) {
-            print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
-          }?>
-  </ul>
-</aside>
-  </div>
-</div>
-
-
-      
-      
     </div>
   </section>
 
