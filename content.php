@@ -2,7 +2,7 @@
 
 <h1>Tytuł: <?php print $content[2];?></h1> 
 
-<div class="entry">
+<div class="entry <?php if($app->getStatusCompare() === TRUE) { ?>entry-compare<?php } ?>">
 
 <?php
 

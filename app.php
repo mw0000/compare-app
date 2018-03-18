@@ -91,14 +91,13 @@ class App extends AppData {
         
         $content = $this->data;
         $content_a = array_shift($content);
-        $n = count($this->data);
-        $content = array_rand($content,2); 
-        
-        return $content;
+        $k = array_rand($content,2); 
+        return $content = array($content[$k[0]],$content[$k[1]]);
 
 
 
     }
+
 
 
 }

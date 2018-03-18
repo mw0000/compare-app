@@ -4,6 +4,7 @@
           //print_r($app->getAppMenu());
           // content ready
           $content = $app->getAppContent();
+          
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +107,8 @@
 
           <div class="columns" id="columns">
             <div class="column is-three-quarters" id="main">  
-              <?php  include('content.php'); } ?>
+              <?php  
+              include('content.php'); } ?>
             </div>
             <div class="column" id="menu-column">
               <aside class="menu is-info">
@@ -122,18 +124,17 @@
             
           <?php if($app->getStatusCompare() === TRUE) { ?>
           <div class="columns">
-            <div class="column">
             
-              <?php  
-              include('content.php');?>
+            <?php //print_r($app->getRandomCompare());?>  
 
-            </div>
-
-            <div class="column">
+            <?php 
             
-              <?php  include('content.php');?>    
-
-            </div>
+            foreach($app->getRandomCompare() as $content) { ?>
+              <div class="column">
+                <?php
+                include('content.php');?>
+              </div>
+            <?php } ?>
           </div>  
         <?php      
           }

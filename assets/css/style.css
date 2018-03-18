@@ -5,3 +5,10 @@
     border-bottom: 1px solid #dddddd;
 
 }
+.entry-compare {
+
+    max-height:800px;
+    border: 2px solid red;
+    overflow: scroll;
+
+}
