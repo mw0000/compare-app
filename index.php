@@ -138,7 +138,7 @@
 
       <div class="dropdown">
         <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+          <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu">
             <span>Dropdown button</span>
             <span class="icon is-small">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -149,7 +149,7 @@
           <div class="dropdown-content">
             
           <?php foreach($app->getAppMenu() as $m) {
-            print '<a class="dropdown-item" href="?lang='.$m.'">'.$m.'</a>';
+            print '<a class="dropdown-item content-'.$m.'" href="#">'.$m.'</a>';
           }?>
             
             <hr class="dropdown-divider">
@@ -160,9 +160,10 @@
         </div>
       </div>
 
-              
-                <?php
-                include('content.php');?>
+                <div class="compare-content-data">
+                  <?php
+                  include('content.php');?>
+                </div>
               </div>
             <?php } ?>
           </div>  

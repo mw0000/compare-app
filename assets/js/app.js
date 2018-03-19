@@ -21,6 +21,20 @@ $(function () {
 
     });
 
+    $('.dropdown-item').click(function() {
+
+        console.log($(this).attr('class').split(' ')[1]);
+        
+        $.get('http://localhost:8000/compare.php', function(data, status){
+            //alert("Data: " + data + "\nStatus: " + status);
+            $( ".compare-content-data" ).empty();
+            $( ".compare-content-data" ).append( data );
+        });
+
+        
+
+    });
+
 });
 
 
