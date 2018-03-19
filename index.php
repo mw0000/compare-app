@@ -110,6 +110,7 @@
               <?php  
               include('content.php'); } ?>
             </div>
+            <?php if($app->getStatusCompare() === FALSE) { ?>
             <div class="column" id="menu-column">
               <aside class="menu is-info">
                 <ul class="menu-list lang-menu">
@@ -119,6 +120,7 @@
                 </ul>
               </aside>
             </div>
+          <?php }?>
           </div>  
 
             
@@ -130,6 +132,13 @@
             <?php 
             
             foreach($app->getRandomCompare() as $content) { ?>
+              
+              <ul class="menu-list lang-menu">
+                  <?php foreach($app->getAppMenu() as $m) {
+                    print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
+                  }?>
+              </ul>
+              
               <div class="column">
                 <?php
                 include('content.php');?>

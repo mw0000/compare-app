@@ -30,7 +30,7 @@ class App extends AppData {
         
         $keys = $this->data[0];
 
-        if (empty($_GET['compare'])) {
+        //if (empty($_GET['compare'])) {
 
             $i = 0;
             foreach($this->data as $m) {
@@ -41,7 +41,7 @@ class App extends AppData {
             $menu1_a = array_shift($menu_a);
             
             return $menu_a;
-        }    
+        //}    
 
     }
 
