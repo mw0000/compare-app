@@ -14,6 +14,13 @@ $(function () {
             $("#columns").attr('class', 'column');
         }
     });
+
+    $('.dropdown').click(function () {
+
+        $(this).toggleClass( "is-active" );
+
+    });
+
 });
 
 

@@ -133,13 +133,34 @@
             
             foreach($app->getRandomCompare() as $content) { ?>
               
-              <ul class="menu-list lang-menu">
-                  <?php foreach($app->getAppMenu() as $m) {
-                    print '<li class="menu-link"><a href="?lang='.$m.'">'.$m.'</a></li>';
-                  }?>
-              </ul>
-              
+
               <div class="column">
+
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown button</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            
+          <?php foreach($app->getAppMenu() as $m) {
+            print '<a class="dropdown-item" href="?lang='.$m.'">'.$m.'</a>';
+          }?>
+            
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              With a divider
+            </a>
+          </div>
+        </div>
+      </div>
+
+              
                 <?php
                 include('content.php');?>
               </div>
