@@ -21,6 +21,8 @@ $(function () {
 
     });
 
+    // dodac podzial na left i right
+
     $('.dropdown-item').click(function() {
 
         console.log($(this).attr('class').split(' ')[1]);
