@@ -25,6 +25,7 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Merriweather:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -61,7 +62,7 @@
     <div class="level-right">
 
  
-      <p class="level-item"><a>Drafts</a></p>
+      <p class="level-item"><a href="http://localhost:8000/?compare=1">Drafts</a></p>
     </div>
   </nav>
 
@@ -69,35 +70,28 @@
 
 
 </div>
-
+<?php if($app->getStatusCompare() === FALSE) { ?>
  <section class="section">
   <div class="container">
     <div class="columns">
-      <div class="column is-one-quarter">
-      </div>
-      <div class="column is-one-quarter">
-      </div>
-      <div class="column is-one-quarter">
-      </div>
-      <div class="column is-one-quarter">
-      <?php if($app->getStatusCompare() === FALSE) { ?>
+     
+      <div class="column is-one-fifth lang-menu-button-div">
         <div class="field">
           <input id="switchRoundedInfo" type="checkbox" name="switchRoundedInfo" class="switch is-rounded is-info" checked="checked">
           <label for="switchRoundedInfo">Schowaj menu</label>
         </div>
-      <?php } ?>    
       </div>
+
+
+
+
     </div>
   </div>
-</div>
+</section>
+<?php } ?>    
 
  <section class="section">
     <div class="container">
-
-
-
-      
-
       <?php
 
 
@@ -119,6 +113,9 @@
                   }?>
                 </ul>
               </aside>
+              
+              
+              
             </div>
           <?php }?>
           </div>  
@@ -146,7 +143,7 @@
 
               <div class="column">
 
-      <div class="dropdown">
+      <div class="dropdown is-pulled-right">
         <div class="dropdown-trigger">
           <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu">
             <span>Dropdown button</span>
