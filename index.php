@@ -130,9 +130,19 @@
             <?php //print_r($app->getRandomCompare());?>  
 
             <?php 
-            
+            $i = 0;
             foreach($app->getRandomCompare() as $content) { ?>
               
+              <?php 
+                  if ($i == 0) {
+                    $c = 'left';
+                  } else {
+                    $c = 'right';
+                  }  
+                  $i++;
+                ?>
+
+
 
               <div class="column">
 
@@ -149,7 +159,7 @@
           <div class="dropdown-content">
             
           <?php foreach($app->getAppMenu() as $m) {
-            print '<a class="dropdown-item content-'.$m.'" href="#">'.$m.'</a>';
+            print '<a class="dropdown-item dropdown-item-'.$c.' content-'.$m.'" href="#">'.$m.'</a>';
           }?>
             
             <hr class="dropdown-divider">
@@ -160,12 +170,15 @@
         </div>
       </div>
 
-                <div class="compare-content-data">
+                <div class="compare-content-data compare-content-data-<?php print $c;?>">
                   <?php
                   include('content.php');?>
                 </div>
               </div>
-            <?php } ?>
+            <?php
+            
+            // endforeach
+          } ?>
           </div>  
         <?php      
           }

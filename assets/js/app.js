@@ -23,17 +23,21 @@ $(function () {
 
     // dodac podzial na left i right
 
-    $('.dropdown-item').click(function() {
-
-        console.log($(this).attr('class').split(' ')[1]);
-        
+    $('.dropdown-item-left').click(function() {
         $.get('http://localhost:8000/compare.php', function(data, status){
             //alert("Data: " + data + "\nStatus: " + status);
-            $( ".compare-content-data" ).empty();
-            $( ".compare-content-data" ).append( data );
+            $( ".compare-content-data-left" ).empty();
+            $( ".compare-content-data-left" ).append( data );
         });
 
-        
+    });
+
+
+    $('.dropdown-item-right').click(function() {
+        $.get('http://localhost:8000/compare.php', function(data, status){
+            $( ".compare-content-data-right" ).empty();
+            $( ".compare-content-data-right" ).append( data );
+        });
 
     });
 
