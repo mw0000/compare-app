@@ -1,6 +1,5 @@
 <?php
 
-
 class AppData {
 
     public $data;
