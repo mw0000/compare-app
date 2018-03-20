@@ -97,6 +97,30 @@ class App extends AppData {
 
     }
 
+    public function getCompareContent($l) {
+        
+        if (!empty($l)) {
+            // Do something.
+            
+            //print $l;
+            $i = 0;
+            //print $this->data[1][1];
+            foreach($this->data as $d) {
+    
+                if($d[1] == $l){
+                    $content = $this->data[$i];
+                }    
+                
+                $i++;
+    
+            }
+    
+            return $content;
+
+          } 
+
+
+    }
 
 
 }

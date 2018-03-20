@@ -159,7 +159,7 @@
           <div class="dropdown-content">
             
           <?php foreach($app->getAppMenu() as $m) {
-            print '<a class="dropdown-item dropdown-item-'.$c.' content-'.$m.'" href="#">'.$m.'</a>';
+            print '<a class="dropdown-item dropdown-item-'.$c.' '.$m.'" href="#">'.$m.'</a>';
           }?>
             
             <hr class="dropdown-divider">

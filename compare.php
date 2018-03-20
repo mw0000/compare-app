@@ -1,3 +1,12 @@
+<?php
+
+include('app.php');
+$app = new App();
+$l = htmlspecialchars($_GET["lang"]);
+$content = $app->getCompareContent($l);
+
+?>
+
 <div class="content">
 
 <h1>Tytuł: <?php print $content[2];?></h1> 

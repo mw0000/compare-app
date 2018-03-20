@@ -24,7 +24,8 @@ $(function () {
     // dodac podzial na left i right
 
     $('.dropdown-item-left').click(function() {
-        $.get('http://localhost:8000/compare.php', function(data, status){
+        var l = $(this).attr('class').split(' ')[2];
+        $.get('http://localhost:8000/compare.php?lang=' + l, function(data, status){
             //alert("Data: " + data + "\nStatus: " + status);
             $( ".compare-content-data-left" ).empty();
             $( ".compare-content-data-left" ).append( data );
@@ -34,7 +35,8 @@ $(function () {
 
 
     $('.dropdown-item-right').click(function() {
-        $.get('http://localhost:8000/compare.php', function(data, status){
+        var l = $(this).attr('class').split(' ')[2];
+        $.get('http://localhost:8000/compare.php?lang=' + l, function(data, status){
             $( ".compare-content-data-right" ).empty();
             $( ".compare-content-data-right" ).append( data );
         });
